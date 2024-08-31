@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #f5f5f5; /* Light gray background for the container */
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center; /* Center the background image */
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center; /* Center the content within the container */
+}
+
+#reset, #pause, #change-level {
+    background-color: #4a90e2; /* Professional blue color */
+    color: #fff; /* White text for contrast */
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 10px; /* Space between buttons */
+}
+
+#reset:hover, #pause:hover, #change-level:hover {
+    background-color: #357abd; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+#reset:focus-visible {
+    background-color: #2a6496; /* Even darker blue for focus */
+}
+
+.grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.mole {
+    width: 100%;
+    height: 100%;
+    background-image: url('mole.png');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.square {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    border-style: solid;
+    border-color: #e0e0e0;
+    background-color: #ffffff;
+    display: inline-block;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.square:hover {
+    background-color: #f1f1f1;
+}
+
+span {
+    color: #357abd;
+}
+
+h5 {
+    font-weight: 100;
+}
+
+#score, #time-left {
+    background-color: #ffffff; /* White background */
+    padding: 5px;
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #4a90e2; /* Matching border color */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+    text-align: center; /* Center the text */
+    color: #333333; /* Darker text color */
+    font-size: 1.5em; /* Slightly smaller font size */
+    margin-bottom: 20px; /* Space below the element */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+#score:hover, #time-left:hover {
+    transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+/* Large screens (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .container {
+        padding: 50px;
+    }
+
+    h3 {
+        font-size: 2.5em; /* Larger font size for headings */
+    }
+
+    .grid {
+        width: 450px;
+        height: 450px;
+    }
+
+    .square {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Medium screens (tablets, 768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        padding: 30px;
+    }
+
+    h3 {
+        font-size: 2em; /* Medium font size for headings */
+    }
+
+    .grid {
+        width: 300px;
+        height: 300px;
+    }
+
+    .square {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Small screens (phones, less than 768px) */
+@media (max-width: 767px) {
+    body {
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px; /* Add some padding for small screens */
+    }
+
+    .container {
+        padding: 20px;
+        width: 100%;
+        max-width: 320px; /* Limit container width on small screens */
+    }
+
+    h3 {
+        font-size: 1.5em; /* Smaller font size for headings */
+    }
+
+    .grid {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto; /* Center the grid */
+    }
+
+    .square {
+        width: 70px;
+        height: 70px;
+    }
+
+    #reset, #pause, #change-level {
+        width: 100%; /* Buttons take full width on small screens */
+        margin-bottom: 10px; /* Add some space between buttons */
+    }
+}
